@@ -1,0 +1,267 @@
+/*resetando configurações*/
+* {
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: sans-serif;
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+/*estilo geral de posicionamento*/
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+}
+
+header {
+  width: 100%;
+  height: 10em;
+  border: 1px solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #030d4f;
+}
+
+main {
+  border: 3px solid #030d4f;
+  border-radius: 0.5em;
+  width: 950px;
+  height: 500px;
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  top: -3.5em;
+  background-color: #e7edea;
+}
+
+div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+/*seção de adição de tarefas*/
+.add {
+  /*primeira div*/
+  height: 70px;
+  width: 350px;
+  position: relative;
+}
+
+.add label {
+  position: absolute;
+  top: 0.1em;
+  left: -0.1em;
+  color: #030d4f;
+  font-weight: 700;
+}
+
+input[type="text"] {
+  appearance: none;
+  outline: 0;
+  background-color: transparent;
+  width: 15em;
+  height: 2em;
+  padding: 3px;
+  border: none;
+  border-bottom: 1px solid;
+  position: absolute;
+  left: -0.1em;
+}
+
+.add button {
+  appearance: none;
+  border: 2px solid #030d4f;
+  background-color: #030d4f;
+  color: #ceecef;
+  font-weight: 700;
+  border-radius: 0.6em;
+  padding: 0.41em;
+  width: 6em;
+  position: absolute;
+  left: 16em;
+  transition: 0.3s;
+}
+
+.add button:hover {
+  color: #030d4f;
+  background-color: #fff;
+  transition: 0.3s;
+}
+.error {
+  position: absolute;
+  top: 4.1em;
+  left: -0.1em;
+  font-size: 0.8rem;
+  color: #ffc52c;
+}
+
+/*seção de tarefas adicionadas*/
+.task {
+  /*segunda div*/
+  width: 505px;
+  padding: 0.6em;
+  flex-direction: column;
+  height: 370px;
+  position: absolute;
+  top: 6.4em;
+  justify-content: flex-start;
+  overflow-y: auto;
+}
+
+#anyTask {
+  color: #a0abac;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.task label {
+  border: 2.5px solid #030d4f;
+  background-color: #030d4f;
+  width: 30em;
+  height: 2.6em;
+  padding: 0.6em;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  margin-top: -10px;
+  border-radius: 0.5em;
+}
+
+label input[type="checkbox"] {
+  appearance: none;
+  background-color: #ceecef;
+  border: 1px solid #ceecef;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 0.58em;
+}
+
+.task span {
+  position: absolute;
+  left: 2.2em;
+  top: 0.4em;
+}
+
+input[type="checkbox"] + span {
+  color: #ceecef;
+}
+
+.material-symbols-outlined {
+  /*icone de lixeira do botão de excluir*/
+  color: red;
+}
+
+.task label button {
+  appearance: none;
+  border: none;
+  background-color: transparent;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: -0.2em;
+  right: 4.2em;
+}
+
+/*configuração de estado do primeiro input*/
+.input-AddTaskFocus {
+  color: #fb0c06;
+}
+
+input[type="text"]:hover {
+  border-color: #fb0c06;
+}
+
+/*Estilização do checkbox quando estiver checado*/
+input[type="checkbox"]:checked {
+  background-color: #00c176;
+  border-color: #00c176;
+}
+
+input[type="checkbox"]:checked::after {
+  content: "✔";
+  color: white;
+  position: absolute;
+  top: -0.14em;
+  left: 0.13em;
+}
+
+input[type="checkbox"]:checked + span {
+  text-decoration: line-through;
+  font-style: italic;
+  color: #00c176;
+}
+
+/*estilização do texto de amostra da data*/
+.dateOfTasks {
+  position: absolute;
+  top: 0.1em;
+  right: 0.8em;
+  font-size: 1.6rem;
+  font-family: "Bebas Neue", cursive;
+  letter-spacing: 1.5px;
+  font-weight: 700;
+  color: #fb0c06;
+}
+
+/*Estilização do texto*/
+
+h1 {
+  font-size: 2.3rem;
+  color: #fb0c06;
+}
+
+/*Estilo mobile-tablets*/
+
+@media (max-width: 950px) {
+  main {
+    width: 600px;
+  }
+
+  .error {
+    left: -0.1em;
+  }
+}
+
+/*Estilo mobile-smartphones*/
+
+@media (max-width: 600px) {
+  main {
+    width: 100%;
+  }
+
+  input[type="text"] {
+    width: 13em;
+    left: 1em;
+  }
+
+  .add label {
+    left: 1em;
+  }
+
+  .add button {
+    left: 15em;
+  }
+
+  .error {
+    left: 1.5em;
+  }
+
+  .task label {
+    width: 350px;
+  }
+
+  .dateOfTasks {
+    font-size: 1.3rem;
+  }
+}
